@@ -21,7 +21,7 @@ if [[ "$ARTEMIS_MAX_MEMORY" ]]; then
 fi
 
 if [[ "$JMX_REMOTE" ]]; then
-  sed -i '/^JAVA_ARGS/a JAVA_ARGS="$JAVA_ARGS -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1098 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=192.168.99.100"' ../etc/artemis.profile
+  sed -i '/^JAVA_ARGS/a JAVA_ARGS="$JAVA_ARGS -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1098 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -Djava.rmi.server.hostname=0.0.0.0"' ../etc/artemis.profile
 fi
 
 if [ "$1" = 'artemis-server' ]; then
